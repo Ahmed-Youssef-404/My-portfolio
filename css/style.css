@@ -45,7 +45,7 @@ a {
 
 .cvButton:hover {
     text-decoration: none !important;
-    background-color: hsl(0, 0%, 100%) !important;
+    background-color: #de6b28 !important;
     color: white !important;
 }
 
