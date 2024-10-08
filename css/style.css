@@ -25,9 +25,8 @@ a {
     position: fixed !important;
     top: 0;
     width: 100%;
+    font-weight: bold;
     z-index: 999;
-    /* height: fit-content !important; */
-    /* height: 540px; */
 }
 
 .logo {
@@ -38,7 +37,8 @@ a {
 
 .cvButton {
     text-decoration: none !important;
-    background-color: #babfc4 !important;
+    background-color: #233b66 !important;
+    color: white;
     border-radius: 10px;
     margin-left: 10px;
 }
