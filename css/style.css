@@ -84,7 +84,7 @@ a {
 
 /* -------------------------------------home---------------------------------------------- */
 .home {
-    background-image: url(../images/home.png);
+    background-image: url(../images/home.webp);
     background-size: 100% 100%;
     /* background-size: 100% 75%; */
     background-repeat: no-repeat;
