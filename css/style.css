@@ -449,7 +449,7 @@ a {
     background-color: #1f2730 !important;
     height: 15px;
     border-radius: 15px !important;
-    margin-bottom: 50px !important;
+    margin-bottom: 30px !important;
 }
 
 .progress-bar {
@@ -597,4 +597,26 @@ a {
     border: #b7bbbd solid !important;
     transition: .3s;
 }
+
+#submitButton{
+    min-width: 130px;
+}
+
 /* -------------------------------------contact-------------------------------- */
+
+.testh{
+    /* border: solid red; */
+    margin-top: 15px !important;
+    /* max-height: 320px; */
+    margin-inline: auto;
+    display: flex;
+}
+
+.testh > div {
+    flex: 1;
+}
+
+.testh2{
+    border: solid red;
+    min-height: 150px;
+}

@@ -127,9 +127,14 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // --------------------------------------------------------------------------
-
 document.getElementById("contactForm").addEventListener("submit", function (e) {
   e.preventDefault();
+
+  var submitButton = document.getElementById("submitButton");
+  
+  // جرب تغير النص بالـ innerHTML بدل textContent
+  submitButton.innerHTML = "Sending...";
+  submitButton.disabled = true;
 
   var formData = {
     name: this.name.value,
@@ -145,7 +150,15 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
     }
   )
     .then((response) => response.text())
-    .then((result) => alert("Form submitted successfully: " + result))
-    .catch((error) => console.error("Error:", error));
+    .then((result) => {
+      alert("Form submitted successfully: " + result);
+      submitButton.innerHTML = "Send Message";
+      submitButton.disabled = false;
+      this.reset();
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      submitButton.innerHTML = "Send Message";
+      submitButton.disabled = false;
+    });
 });
-
