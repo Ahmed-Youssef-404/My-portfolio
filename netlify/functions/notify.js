@@ -6,11 +6,17 @@ export async function handler(event, context) {
   const token = process.env.TELEGRAM_BOT_TOKEN;
   const chatId = process.env.TELEGRAM_CHAT_ID;
 
-  // تحديد الوقت الحالي بصيغة ساعة:دقيقة:ثانية
+  // الوقت بتوقيت مصر بنظام 12 ساعة
   const now = new Date();
-  const timeString = now.toLocaleTimeString("en-GB", { hour12: false }); // مثال: 15:32:10
+  const timeString = now.toLocaleTimeString("en-US", {
+    hour12: true,
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    timeZone: "Africa/Cairo"
+  });
 
-  const message = `🚀 Someone just visited your portfolio!\n⏰ Time: ${timeString}`;
+  const message = `🚀 Someone just visited your portfolio!\n⏰ Time (Egypt): ${timeString}`;
 
   try {
     await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
@@ -24,4 +30,3 @@ export async function handler(event, context) {
     return { statusCode: 500, body: "Error sending notification" };
   }
 }
-
